@@ -1,0 +1,8 @@
+<% if !@in_grid %>
+  <p>Sorry but <strong><%= params[:word] %></strong> can't be built out of <%= params[:letters] %></p>
+<% elsif !@valid_word %>
+  <p>Sorry but <strong><%= params[:word] %></strong> doesn't seem to be a valid English word...</p>
+<% elsif (@in_grid && @valid_word) %>
+  <p><strong>Congratulations</strong> <%= params[:word] %> is a valid English word!</p>
+<% end %>
+<%= link_to "Play again", new_path %>
